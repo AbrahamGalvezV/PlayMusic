@@ -1,0 +1,96 @@
+body {
+    font-family: "Quicksand", serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background: url('./img/back1.jpg') center/cover no-repeat fixed;
+    color: #fff;
+}
+
+.music-player {
+    display: flex;
+    justify-content: space-between;
+    width: 550px;
+}
+
+.details {
+ 
+}
+
+#song-list {
+
+}
+
+.timeline {
+
+}
+
+#seek-bar {
+
+}
+
+#time-display {
+
+}
+
+.controls {
+
+}
+
+.controls button {
+    
+}
+
+.controls button:hover {
+
+}
+
+#tongle-list-btn {
+
+}
+
+
+#tongle-list-btn:hover {
+
+}
+
+.cover {
+    
+}
+
+.cover-img {
+
+}
+
+.song-list {
+
+}
+
+.song-list {
+
+}
+
+.song-list.hiddem {
+    
+}
+.song-list.hiddem {
+    
+}
+.song-list.hiddem {
+    
+}
+.song-list.hiddem {
+    
+}
+
+
+
+
+
+
+
+
+
+
