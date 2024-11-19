@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>A.G.V.PlayMusic</title>
+</head>
+<body>
+    <div class="music-player">
+        <div class="details">
+            <h2 class="songs">Canción actual</h2>
+            <div class="timeline">
+                <input type="range" id="seek-bar" min="0" value="0">
+                <div id="time-display">
+                    <span id="current-time">0:00</span> /  <span id="duration">0:00</span>
+                </div>
+            </div>
+            <div class="controls">
+                <button id="prev-btn"></button>
+                <button id="play-btn"></button>
+                <button id="next-btn"></button>
+            </div>
+            <button id="toggle-list-btn">📋 Lista de candiones</button>
+        </div>
+    </div>
+    <div class="cover">
+        <img id="cover.img" src="default-cover.png" alt="Caratula">
+    </div>
+
+    <ul class="song-list" id="song-list">
+        <li data-src="song1.mp3" data ="cover1.jpg" data-tittle="Canción 1">Low down rolling stones</li>
+        <li data-src="song1.mp3" data ="cover2.jpg" data-tittle="Canción 2">Low down rolling stones</li>
+        <li data-src="song1.mp3" data ="cover3.jpg" data-tittle="Canción 3">Low down rolling stones</li>
+    </ul>
+    <audio id="audio"></audio>
+    <script href="./main/play.js"></script>
+</body>
+</html>
