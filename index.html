@@ -3,35 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
+    rel="stylesheet"/>
     <link rel="stylesheet" href="./style.css">
     <title>A.G.V.PlayMusic</title>
 </head>
 <body>
     <div class="music-player">
         <div class="details">
-            <h2 class="songs">Canción actual</h2>
+            <p id="song-title">Canción Actual</p>
             <div class="timeline">
                 <input type="range" id="seek-bar" min="0" value="0">
                 <div id="time-display">
-                    <span id="current-time">0:00</span> /  <span id="duration">0:00</span>
+                    <span id="current-time">0:00</span>
+                    <div class="controls">
+                        <button id="prev-btn"></button>
+                        <button id="play-btn"></button>
+                        <button id="next-btn"></button>
+                    </div>
+                    <span id="duration">0:00</span>
                 </div>
             </div>
-            <div class="controls">
-                <button id="prev-btn"></button>
-                <button id="play-btn"></button>
-                <button id="next-btn"></button>
-            </div>
-            <button id="toggle-list-btn">📋 Lista de candiones</button>
+            <button id="toggle-list-btn">📋 Lista de canciones</button>
+        </div>
+        <div class="cover">
+            <img id="cover-img" src="./img/lowDownBack.png" alt="Carátula">
         </div>
     </div>
-    <div class="cover">
-        <img id="cover.img" src="default-cover.png" alt="Caratula">
-    </div>
-
-    <ul class="song-list" id="song-list">
-        <li data-src="song1.mp3" data ="cover1.jpg" data-tittle="Canción 1">Low down rolling stones</li>
-        <li data-src="song1.mp3" data ="cover2.jpg" data-tittle="Canción 2">Low down rolling stones</li>
-        <li data-src="song1.mp3" data ="cover3.jpg" data-tittle="Canción 3">Low down rolling stones</li>
+    <ul class="song-list hidden" id="song-list">
+        <li data-src="song1.mp3" data-cover="cover1.jpg" data-title="Canción 1">Canción 1</li>
+        <li data-src="song2.mp3" data-cover="cover2.jpg" data-title="Canción 2">Canción 2</li>
+        <li data-src="song3.mp3" data-cover="cover3.jpg" data-title="Canción 3">Canción 3</li>
     </ul>
     <audio id="audio"></audio>
     <script href="./main/play.js"></script>
