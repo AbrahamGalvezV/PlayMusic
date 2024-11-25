@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,33 +12,27 @@
 <body>
     <div class="music-player">
         <div class="details">
-            <p id="song-title">Canción Actual</p>
+            <button id="toggle-list-btn">📋 Lista de canciones</button>
+            <p id="song-title"></p>
             <div class="timeline">
-                <input type="range" id="seek-bar" min="0" value="0">
+                <input type="range" id="seek-bar" value="0" step="1" min="0" max="100">
                 <div id="time-display">
                     <span id="current-time">0:00</span>
-                    <div class="controls">
-                        <button id="prev-btn"></button>
-                        <button id="play-btn"></button>
-                        <button id="next-btn"></button>
-                    </div>
-                    <span id="duration">0:00</span>
+                    <span id="total-duration">0:00</span>
                 </div>
             </div>
-            <button id="toggle-list-btn">📋 Lista de canciones</button>
+            <div class="controls">
+                <button id="prev-btn" aria-label="Anterior"></button>
+                <button id="play-btn" aria-label="Reproducir"></button>
+                <button id="next-btn" aria-label="Siguiente"></button>
+            </div>
         </div>
         <div class="cover">
             <img id="cover-img" src="./img/moddyBack.png" alt="Carátula">
         </div>
     </div>
-    <ul class="song-list hidden" id="song-list">
-        <li data-src="./songlist/Low Down Rolling Stone .mp3" data-cover="./img/lowDown.png" data-title="Low Down Rolling Stone">Low Down Rolling Stone</li>
-        <li data-src="./songlist/Corduroy .mp3" data-cover="./img/corduroy.png" data-title="Corduroy">Corduroy</li>
-        <li data-src="./songlist/Muddy water.mp3" data-cover="./img/moddy.png" data-title="Muddy water">Muddy water</li>
-        <li data-src="./songlist/Come Together .mp3" data-cover="./img/comeTogethrt.png" data-title="Come Together">Come Together</li>
-        <li data-src="./songlist/Corduroy .mp3" data-cover="./img/comedon.png" data-title="Corduroy">Corduroy</li>
-    </ul>
+    <ul class="song-list hidden" id="song-list"></ul>
     <audio id="audio"></audio>
-    <script href="./main/play.js"></script>
+    <script src="./main/play.js"></script>
 </body>
 </html>
