@@ -1,4 +1,4 @@
-// Lista de canciones: cada objeto contiene el título, la ruta del audio y la imagen
+// Lista de canciones
 const songList = [
   { title: "Low Down Rolling Stone", file: "../songlist/Low Down Rolling Stone .mp3", cover: "../img/comeBack.png" },
   { title: "Corduroy", file: "../songlist/Corduroy .mp3", cover: "../img/corduroy.png" },
@@ -28,19 +28,16 @@ function loadSong(index) {
   audioElement.src = song.file;
   coverImg.src = song.cover;
   songTitle.textContent = song.title;
+  audioElement.addEventListener("loadedmetadata", () => {
+    totalDurationEl.textContent = formatTime(audioElement.duration);
+  });
 }
 
 // Mostrar/Ocultar la lista de canciones
 toggleListButton.addEventListener("click", () => {
-  songListContainer.classList.toggle("visible");
-});
-
-//
-document.getElementById("toggle-list-btn").addEventListener("click", () => {
   const listContainer = document.getElementById("song-list-container");
   listContainer.classList.toggle("visible");
 });
-
 
 // Generar dinámicamente la lista de canciones
 songList.forEach((song, index) => {
@@ -49,8 +46,7 @@ songList.forEach((song, index) => {
   li.addEventListener("click", () => {
     currentSongIndex = index;
     loadSong(currentSongIndex);
-    audioElement.play();
-    playButton.style.backgroundImage = "url('./img/pause.png')";
+    playSong();
   });
   songListContainer.appendChild(li);
 });
@@ -58,21 +54,44 @@ songList.forEach((song, index) => {
 // Función para reproducir/pausar la canción
 function togglePlay() {
   if (audioElement.paused) {
-    audioElement.play();
-    playButton.style.backgroundImage = "url('./img/pause.png')";
+    playSong();
   } else {
-    audioElement.pause();
-    playButton.style.backgroundImage = "url('./img/play.png')";
+    pauseSong();
   }
 }
+
+// Reproducir canción
+function playSong() {
+  audioElement.play();
+  playButton.style.backgroundImage = "url('./img/pause.png')";
+}
+
+// Pausar canción
+function pauseSong() {
+  audioElement.pause();
+  playButton.style.backgroundImage = "url('./img/play.png')";
+}
+
+// Cambiar canción
+function changeSong(direction) {
+  currentSongIndex = (currentSongIndex + direction + songList.length) % songList.length;
+  loadSong(currentSongIndex);
+  if (!audioElement.paused) {
+    playSong(); // Reproducir automáticamente si estaba en reproducción
+  } else {
+    pauseSong(); // Actualizar botón si estaba pausado
+  }
+}
+
+// Evento para pasar automáticamente a la siguiente canción
+audioElement.addEventListener("ended", () => {
+  changeSong(1);
+});
 
 // Actualizar la barra de progreso
 function updateSeekBar() {
   seekBar.value = (audioElement.currentTime / audioElement.duration) * 100 || 0;
   currentTimeEl.textContent = formatTime(audioElement.currentTime);
-  if (audioElement.currentTime === audioElement.duration) {
-    changeSong(1);
-  }
 }
 
 // Formatear el tiempo en minutos:segundos
@@ -82,21 +101,11 @@ function formatTime(seconds) {
   return `${mins}:${secs < 10 ? "0" : ""}${secs}`;
 }
 
-// Cambiar canción
-function changeSong(direction) {
-  currentSongIndex = (currentSongIndex + direction + songList.length) % songList.length;
-  loadSong(currentSongIndex);
-  audioElement.play();
-}
-
 // Eventos de control
 playButton.addEventListener("click", togglePlay);
 prevButton.addEventListener("click", () => changeSong(-1));
 nextButton.addEventListener("click", () => changeSong(1));
 audioElement.addEventListener("timeupdate", updateSeekBar);
-audioElement.addEventListener("loadedmetadata", () => {
-  totalDurationEl.textContent = formatTime(audioElement.duration);
-});
 seekBar.addEventListener("input", () => {
   audioElement.currentTime = (seekBar.value / 100) * audioElement.duration;
 });

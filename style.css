@@ -24,6 +24,7 @@ body:before {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 20px;
 }
 
 .music-player {
@@ -170,14 +171,13 @@ body:before {
   justify-content: center;
   align-items: center;
   opacity: 0;
-  transform: scale(0.5);
+  transform: translateY(-50px);
   transition: transform 0.5s ease-out, opacity 0.5s ease-out;
 }
 
 #song-list-container.visible {
-  display: flex;
   opacity: 1;
-  transform: scale(1);
+  transform: translateY(0);
 }
 
 .song-list {
