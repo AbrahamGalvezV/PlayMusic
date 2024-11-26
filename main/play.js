@@ -1,35 +1,10 @@
 // Lista de canciones: cada objeto contiene el título, la ruta del audio y la imagen
 const songList = [
-  {
-    title: "Low Down Rolling Stone",
-    file: "/songlist/Low Down Rolling Stone .mp3",
-    cover: "/img/comeBack.png",
-  },
-  {
-    title: "Corduroy",
-    file: "/songlist/Corduroy .mp3",
-    cover: "/img/corduroy.png",
-  },
-  {
-    title: "Come Together",
-    file: "/songlist/Come Together .mp3",
-    cover: "/img/comeTogethrt.png",
-  },
-  {
-    title: "Muddy water",
-    file: "/songlist/Muddy water.mp3",
-    cover: "/img/moddy.png",
-  },
-  {
-    title: "Come Together",
-    file: "/songlist/The Comedown.mp3",
-    cover: "/img/comedon.png",
-  },
-  {
-    title: "Corduroy",
-    file: "/songlist/Corduroy .mp3",
-    cover: "/img/corduroy.png",
-  },
+  { title: "Low Down Rolling Stone", file: "../songlist/Low Down Rolling Stone .mp3", cover: "../img/comeBack.png" },
+  { title: "Corduroy", file: "../songlist/Corduroy .mp3", cover: "../img/corduroy.png" },
+  { title: "Come Together", file: "../songlist/Come Together .mp3", cover: "../img/comeTogethrt.png" },
+  { title: "Muddy water", file: "../songlist/Muddy water.mp3", cover: "../img/moddy.png" },
+  { title: "The Comedown", file: "../songlist/The Comedown.mp3", cover: "../img/comedon.png" },
 ];
 
 // Selección de elementos clave del DOM
@@ -50,35 +25,55 @@ let currentSongIndex = 0;
 // Función para cargar una canción
 function loadSong(index) {
   const song = songList[index];
-  audioElement.src = song.file; // Ruta del archivo de audio
-  coverImg.src = song.cover; // Ruta de la imagen
-  songTitle.textContent = song.title; // Actualización del título
+  audioElement.src = song.file;
+  coverImg.src = song.cover;
+  songTitle.textContent = song.title;
 }
 
+// Mostrar/Ocultar la lista de canciones
+toggleListButton.addEventListener("click", () => {
+  songListContainer.classList.toggle("visible");
+});
 
+//
+document.getElementById("toggle-list-btn").addEventListener("click", () => {
+  const listContainer = document.getElementById("song-list-container");
+  listContainer.classList.toggle("visible");
+});
+
+
+// Generar dinámicamente la lista de canciones
+songList.forEach((song, index) => {
+  const li = document.createElement("li");
+  li.textContent = song.title;
+  li.addEventListener("click", () => {
+    currentSongIndex = index;
+    loadSong(currentSongIndex);
+    audioElement.play();
+    playButton.style.backgroundImage = "url('./img/pause.png')";
+  });
+  songListContainer.appendChild(li);
+});
 
 // Función para reproducir/pausar la canción
 function togglePlay() {
   if (audioElement.paused) {
-    audioElement.play(); // Reproducir la canción
-    playButton.style.backgroundImage = "url('./img/pause.png')"; // Cambiar a icono de pausa
+    audioElement.play();
+    playButton.style.backgroundImage = "url('./img/pause.png')";
   } else {
-    audioElement.pause(); // Pausar la canción
-    playButton.style.backgroundImage = "url('./img/play.png')"; // Cambiar a icono de reproducción
+    audioElement.pause();
+    playButton.style.backgroundImage = "url('./img/play.png')";
   }
 }
 
-// Función para actualizar la barra de progreso
+// Actualizar la barra de progreso
 function updateSeekBar() {
   seekBar.value = (audioElement.currentTime / audioElement.duration) * 100 || 0;
   currentTimeEl.textContent = formatTime(audioElement.currentTime);
-  // Cambiar a la siguiente canción
   if (audioElement.currentTime === audioElement.duration) {
     changeSong(1);
   }
 }
-// console.log(audioElement.duration);
-
 
 // Formatear el tiempo en minutos:segundos
 function formatTime(seconds) {
@@ -87,30 +82,12 @@ function formatTime(seconds) {
   return `${mins}:${secs < 10 ? "0" : ""}${secs}`;
 }
 
-// Función para cambiar canción
+// Cambiar canción
 function changeSong(direction) {
-  currentSongIndex =
-    (currentSongIndex + direction + songList.length) % songList.length;
+  currentSongIndex = (currentSongIndex + direction + songList.length) % songList.length;
   loadSong(currentSongIndex);
   audioElement.play();
 }
-
-// Mostrar/Ocultar la lista de canciones
-toggleListButton.addEventListener("click", () => {
-  songListContainer.classList.toggle("hidden");
-});
-
-// Generar la lista de canciones dinámicamente
-songList.forEach((song, index) => {
-  const li = document.createElement("li");
-  li.textContent = song.title;
-  li.addEventListener("click", () => {
-    currentSongIndex = index;
-    loadSong(currentSongIndex);
-    audioElement.play();
-  });
-  songListContainer.appendChild(li);
-});
 
 // Eventos de control
 playButton.addEventListener("click", togglePlay);
@@ -124,5 +101,5 @@ seekBar.addEventListener("input", () => {
   audioElement.currentTime = (seekBar.value / 100) * audioElement.duration;
 });
 
-// Cargar la primera canción al iniciar
+// Cargar la primera canción
 loadSong(currentSongIndex);

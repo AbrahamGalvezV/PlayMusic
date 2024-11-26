@@ -3,36 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link
-    href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
-    rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="./style.css">
     <title>A.G.V.PlayMusic</title>
 </head>
 <body>
-    <div class="music-player">
-        <div class="details">
-            <button id="toggle-list-btn">📋 Lista de canciones</button>
-            <p id="song-title"></p>
-            <div class="timeline">
-                <input type="range" id="seek-bar" value="0" step="1" min="0" max="100">
-                <div id="time-display">
-                    <span id="current-time">0:00</span>
-                    <span id="total-duration">0:00</span>
-                </div>
+    <div class="music-player-container">
+        <div class="music-player">
+          <div class="details">
+            <div class="title-container">
+              <h1 id="song-title">Song Title</h1>
+              <button id="toggle-list-btn">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+              </button>
+            </div>
+            <input type="range" id="seek-bar" value="0" max="100">
+            <div id="time-display">
+              <span>0:00</span>
+              <span>3:30</span>
             </div>
             <div class="controls">
-                <button id="prev-btn" aria-label="Anterior"></button>
-                <button id="play-btn" aria-label="Reproducir"></button>
-                <button id="next-btn" aria-label="Siguiente"></button>
+              <button id="prev-btn"></button>
+              <button id="play-btn"></button>
+              <button id="next-btn"></button>
             </div>
+          </div>
+          <div class="cover">
+            <img id="cover-img" src="./img/cover.jpg" alt="Album Cover">
+          </div>
+        </div>     
+        <!-- Hidden initially, div for song list -->
+        <div id="song-list-container" class="hidden">
+          <ul class="song-list">
+            <li>Song 1</li>
+            <li>Song 2</li>
+            <li>Song 3</li>
+            <li>Song 4</li>
+          </ul>
         </div>
-        <div class="cover">
-            <img id="cover-img" src="./img/moddyBack.png" alt="Carátula">
-        </div>
-    </div>
-    <ul class="song-list hidden" id="song-list"></ul>
+      </div>      
     <audio id="audio"></audio>
-    <script src="./main/play.js"></script>
+    <script src="./main/play.js" defer></script> <!-- Se agregó defer -->
 </body>
 </html>
