@@ -1,9 +1,9 @@
 // Lista de canciones
 const songList = [
   { title: "Low Down Rolling Stone", file: "../songlist/Low Down Rolling Stone .mp3", cover: "../img/comeBack.png" },
+  { title: "Muddy water", file: "../songlist/Muddy water.mp3", cover: "../img/moddyBack.png" },
+  { title: "Come Together", file: "../songlist/Come Together .mp3", cover: "../img/lowDownBack.png" },
   { title: "Corduroy", file: "../songlist/Corduroy .mp3", cover: "../img/corduroy.png" },
-  { title: "Come Together", file: "../songlist/Come Together .mp3", cover: "../img/comeTogethrt.png" },
-  { title: "Muddy water", file: "../songlist/Muddy water.mp3", cover: "../img/moddy.png" },
   { title: "The Comedown", file: "../songlist/The Comedown.mp3", cover: "../img/comedon.png" },
 ];
 
@@ -19,6 +19,7 @@ const prevButton = document.querySelector("#prev-btn");
 const nextButton = document.querySelector("#next-btn");
 const toggleListButton = document.querySelector("#toggle-list-btn");
 const songListContainer = document.querySelector("#song-list");
+const toggleListButtonClose = document.querySelector("#toggle-list-btn-close");
 
 let currentSongIndex = 0;
 
@@ -36,6 +37,14 @@ function loadSong(index) {
 // Mostrar/Ocultar la lista de canciones
 toggleListButton.addEventListener("click", () => {
   const listContainer = document.getElementById("song-list-container");
+  listContainer.classList.toggle("visible");
+  listContainer.classList.toggle("hidden");
+});
+
+// Mostrar/Ocultar la lista de canciones
+toggleListButtonClose.addEventListener("click", () => {
+  const listContainer = document.getElementById("song-list-container");
+  listContainer.classList.toggle("hidden");
   listContainer.classList.toggle("visible");
 });
 
@@ -76,7 +85,7 @@ function pauseSong() {
 function changeSong(direction) {
   currentSongIndex = (currentSongIndex + direction + songList.length) % songList.length;
   loadSong(currentSongIndex);
-  if (!audioElement.paused) {
+  if (audioElement.paused) {
     playSong(); // Reproducir automáticamente si estaba en reproducción
   } else {
     pauseSong(); // Actualizar botón si estaba pausado
@@ -86,6 +95,7 @@ function changeSong(direction) {
 // Evento para pasar automáticamente a la siguiente canción
 audioElement.addEventListener("ended", () => {
   changeSong(1);
+  playSong();
 });
 
 // Actualizar la barra de progreso

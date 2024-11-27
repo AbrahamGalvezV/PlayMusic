@@ -11,32 +11,39 @@
     <div class="music-player-container">
         <div class="music-player">
             <div class="details">
+                
+                <button id="toggle-list-btn">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </button>
                 <div class="title-container">
-                    <h1 id="song-title">Song Title</h1>
-                    <button id="toggle-list-btn">
-                        <div class="line"></div>
-                        <div class="line"></div>
-                        <div class="line"></div>
-                    </button>
+                    <p id="song-title">Song Title</p>
+ 
                 </div>
                 <input type="range" id="seek-bar" value="0" max="100">
                 <div id="time-display">
-                    <span id="current-time">0:00</span>
-                    <span id="total-duration">3:30</span>
+                    <span id="current-time" class="time-size">0:00</span>
+                    <div class="controls">
+                        <button id="prev-btn"></button>
+                        <button id="play-btn"></button>
+                        <button id="next-btn"></button>
+                    </div>
+                    <span id="total-duration" class="time-size">3:30</span>
+                    
                 </div>
-                <div class="controls">
-                    <button id="prev-btn"></button>
-                    <button id="play-btn"></button>
-                    <button id="next-btn"></button>
-                </div>
+
             </div>
             <div class="cover">
-                <img id="cover-img" src="./img/cover.jpg" alt="Album Cover">
+                <img id="cover-img" src="./img/cover1.png" alt="Album Cover">
             </div>
         </div>
-      
-        <!-- Hidden initially -->
         <div id="song-list-container" class="hidden">
+            <button id="toggle-list-btn-close">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </button>
             <ul class="song-list" id="song-list"></ul>
         </div>
     </div>
