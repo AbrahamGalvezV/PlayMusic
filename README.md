@@ -26,7 +26,7 @@ Se trata de un reproductor de música dinámico y minimalista que ofrece una exp
    - Cada canción tiene una imagen de carátula que cambia automáticamente.
 
 4. **Diseño responsivo y visualmente atractivo** 🖼️
-   [Gif ejemlo de responsive](./video/gif.mp4)Ñ
+   [Gif ejemlo de responsive](./video/gif.gif)
    - Fondo animado con un diseño minimalista.
    - Interfaz adaptable a diferentes tamaños de pantalla.
 
