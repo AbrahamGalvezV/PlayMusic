@@ -12,21 +12,20 @@ Se trata de un reproductor de música dinámico y minimalista que ofrece una exp
 
 ## Funcionamiento
 
-1. **Reproducción y control de música** ⏯️ 
+1. ⏯️ **Reproducción y control de música**  
    - Inicia, pausa y cambia canciones fácilmente con los botones de control.
    - La barra de progreso permite navegar rápidamente dentro de una pista.
 
-2. **Lista de canciones interactiva** 📋  
+2. 📋 **Lista de canciones interactiva**   
 ![Imagen de la aplicación convirtiendo de Celsius a Fahrenheit](./img/Captura2.png)
    - Las canciones se generan dinámicamente en la interfaz.
    - Permite seleccionar una canción específica desde la lista.
 
-3. **Carátula del álbum** 🎴
+3. 🎴 **Carátula del álbum** 
 ![Imagen de la aplicación convirtiendo de Celsius a Fahrenheit](./img/Captura1.png)
    - Cada canción tiene una imagen de carátula que cambia automáticamente.
 
-4. **Diseño responsivo y visualmente atractivo** 🖼️
-   [Gif ejemlo de responsive](./video/gif.gif)
+4. 🖼️ **Diseño responsivo y visualmente atractivo** 
    - Fondo animado con un diseño minimalista.
    - Interfaz adaptable a diferentes tamaños de pantalla.
 
@@ -50,12 +49,12 @@ Se trata de un reproductor de música dinámico y minimalista que ofrece una exp
 
 ## 💼 Derechos de propiedad intelectual
 
-**Artistas**
+**🎤 Artistas 🎤**
 
 - [Gary Clark Jr](https://open.spotify.com/intl-es/artist/01aC2ikO4Xgb2LUpf9JfKp) 
 - [Ocean Alley](https://open.spotify.com/intl-es/artist/18lpwfiys4GtdHWNUu9qQr)
 
-**Canciones**
+**🎶 Canciones 🎶**
 
 - Low Down Rolling Stones & Gary Clark Jr
 - Muddy water & Ocean Hally
@@ -63,7 +62,7 @@ Se trata de un reproductor de música dinámico y minimalista que ofrece una exp
 - Corduroy & Ocean Hally
 - The Comedown & Ocean Hally 
 
-**Imagenes**
+**🖼️ Imagenes 🖼️**
 
 - [Gary Clark Jr](https://www.instagram.com/garyclarkjr/?hl=es)
 - [Ocean Alley](https://whenthehornblows.com/content/2023/7/3/live-review-ocean-alley-troxy-london-30062023)
