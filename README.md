@@ -49,7 +49,27 @@ Se trata de un reproductor de música dinámico y minimalista que ofrece una exp
 
 ## 💼 Derechos de propiedad intelectual
 
-**Musica**
+**Artistas**
+
+- [Gary Clark Jr](https://open.spotify.com/intl-es/artist/01aC2ikO4Xgb2LUpf9JfKp) 
+- [Ocean Alley](https://open.spotify.com/intl-es/artist/18lpwfiys4GtdHWNUu9qQr)
+
+**Canciones**
+
+- Low Down Rolling Stones & Gary Clark Jr
+- Muddy water & Ocean Hally
+- Come Together & Gary Clark Jr
+- Corduroy & Ocean Hally
+- The Comedown & Ocean Hally 
+
+**Imagenes**
+
+- [Gary Clark Jr](https://www.instagram.com/garyclarkjr/?hl=es)
+- [Ocean Alley](https://whenthehornblows.com/content/2023/7/3/live-review-ocean-alley-troxy-london-30062023)
+- [cover1](https://pixabay.com/es/illustrations/instrumento-m%C3%BAsica-guitarra-musical-3888684/)
+- [cover2](https://pixabay.com/es/illustrations/guitarra-instrumento-m%C3%BAsica-8343666/)
+- [cover3](https://pixabay.com/es/illustrations/ai-generado-ni%C3%B1a-cantante-concierto-8586140/)
+- [iconos](https://iconos8.es/)
 
 
 ## 📭 Contacto 

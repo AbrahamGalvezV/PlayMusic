@@ -49,16 +49,16 @@
   }
 
   #prev-btn {
-    background-image: url("../img/next-24.png");
+    background-image: url("../img/next.png");
     transform: rotate(180deg);
   }
 
   #play-btn {
-    background-image: url("../img/play-24.png");
+    background-image: url("../img/play.png");
   }
 
   #next-btn {
-    background-image: url("../img/next-24.png");
+    background-image: url("../img/next.png");
   }
 
   #song-list-container {
