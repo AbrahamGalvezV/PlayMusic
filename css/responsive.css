@@ -1,6 +1,4 @@
 @media screen and (max-width: 800px) {
-
-
   .music-player {
     width: 400px;
     height: 200px;
@@ -10,7 +8,7 @@
   .details {
     padding: 25px;
   }
-   
+
   #toggle-list-btn {
     width: 20px;
   }
@@ -23,11 +21,10 @@
     font-size: 1rem;
   }
 
-  
   #seek-bar::-webkit-slider-runnable-track {
     height: 0.3rem;
   }
-  
+
   #seek-bar::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
@@ -55,15 +52,30 @@
     background-image: url("../img/next-24.png");
     transform: rotate(180deg);
   }
-  
+
   #play-btn {
     background-image: url("../img/play-24.png");
   }
-  
+
   #next-btn {
     background-image: url("../img/next-24.png");
   }
 
+  #song-list-container {
+    width: 256px;
+    height: 200px;
+    border-radius: 20px 0px 0px 20px;
+    font-size: 13px; 
+    padding-left: 15px;
+  }
 
+  #toggle-list-btn-close .line {
+    width: 15;
+    height: 2px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
 
 }

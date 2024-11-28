@@ -41,10 +41,16 @@ Se trata de un reproductor de música dinámico y minimalista que ofrece una exp
 
 - 🛠️ Perfeccionar algunos elementos
 
-## Instalación y uso
+## 💻 ¿Quieres comprobarlo en tu equipo? 
 
-1. Clona el repositorio:
-   git clone https://github.com/usuario/A.G.V.PlayMusic.git
+- [Pincha aquí para acceder al reprodutor](https://abrahamgalvezv.github.io/PlayMusic/)
+- Clona este repositorio en tu equipo
+- ¡Implementa esta función en tu proyecto! 
+
+## 💼 Derechos de propiedad intelectual
+
+**Musica**
+
 
 ## 📭 Contacto 
 
