@@ -1,10 +1,10 @@
 // Lista de canciones
 const songList = [
-  { title: "Low Down Rolling Stone", file: "./songlist/Low Down Rolling Stone .mp3", cover: "./img/comeBack.png" },
-  { title: "Muddy water", file: "./songlist/Muddy water.mp3", cover: "./img/moddyBack.png" },
-  { title: "Come Together", file: "./songlist/Come Together .mp3", cover: "./img/lowDownBack.png" },
-  { title: "Corduroy", file: "./songlist/Corduroy .mp3", cover: "./img/corduroy.png" },
-  { title: "The Comedown", file: "./songlist/The Comedown.mp3", cover: "./img/comedon.png" },
+  { title: "Low Down Rolling Stone", file: "songlist/Low Down Rolling Stone .mp3", cover: "img/comeBack.png" },
+  { title: "Muddy water", file: "songlist/Muddy water.mp3", cover: "img/moddyBack.png" },
+  { title: "Come Together", file: "songlist/Come Together .mp3", cover: "img/lowDownBack.png" },
+  { title: "Corduroy", file: "songlist/Corduroy .mp3", cover: "img/corduroy.png" },
+  { title: "The Comedown", file: "songlist/The Comedown.mp3", cover: "img/comedon.png" },
 ];
 
 // Selección de elementos clave del DOM
