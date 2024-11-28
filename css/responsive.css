@@ -1,0 +1,69 @@
+@media screen and (max-width: 800px) {
+
+
+  .music-player {
+    width: 400px;
+    height: 200px;
+    border-radius: 20px;
+  }
+
+  .details {
+    padding: 25px;
+  }
+   
+  #toggle-list-btn {
+    width: 20px;
+  }
+
+  #toggle-list-btn .line {
+    margin-top: 5px;
+  }
+
+  #song-title {
+    font-size: 1rem;
+  }
+
+  
+  #seek-bar::-webkit-slider-runnable-track {
+    height: 0.3rem;
+  }
+  
+  #seek-bar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #ffffffbc;
+    border-radius: 50%;
+    height: 0.7rem;
+    width: 0.7rem;
+    margin-top: -3px;
+  }
+
+  #time-display {
+    font-size: 0.7rem;
+  }
+
+  .controls {
+    gap: 8px;
+  }
+
+  .controls button {
+    width: 35px;
+    height: 35px;
+  }
+
+  #prev-btn {
+    background-image: url("../img/next-24.png");
+    transform: rotate(180deg);
+  }
+  
+  #play-btn {
+    background-image: url("../img/play-24.png");
+  }
+  
+  #next-btn {
+    background-image: url("../img/next-24.png");
+  }
+
+
+
+}
